@@ -1,14 +1,11 @@
-const btn = document.getElementById("btn");
-btn.addEventListener("click", () => {
-  document.querySelector("header ul").classList.toggle("show");
-});
-
-const toTop = document.querySelector(".back-top");
-
-window.addEventListener("scroll", () => {
-  if (pageYOffset > 75) {
-    toTop.classList.add("active");
-  } else {
-    toTop.classList.remove("active");
-  }
-});
+function switchTheme() {
+    const body = document.body;
+    const themeSwitchButton = document.querySelector('.theme-switch');
+    body.classList.toggle('dark-theme');
+    
+    if (body.classList.contains('dark-theme')) {
+        themeSwitchButton.textContent = "Switch to Light Theme";
+    } else {
+        themeSwitchButton.textContent = "Switch to Dark Theme";
+    }
+}
